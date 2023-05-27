@@ -1,19 +1,22 @@
-import React from 'react';
-import { BrowserRouter as  Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Home from './components/Home';
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
 import Add from './components/Add';
+import Home from './components/Home';
+import Nav from './components/Nav';
 
-const App = () => {
+
+function App() {
   return (
-    <Routes>
-      <div>
-        <Navbar />
-          <Route path="/" exact component={Home} />
-          <Route path="/add-blog" component={Add} />
-      </div>
-    </Routes>
+   
+    <div>
+      <Nav/>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/p' element={<Add />} />
+      </Routes>
+
+    </div>
   );
-};
+}
 
 export default App;
